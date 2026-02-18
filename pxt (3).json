@@ -1,0 +1,51 @@
+{
+    "name": "bluetooth-nfc",
+    "description": "Bluetooth services combined with I2C NFC (PN532) support for micro:bit. Supports DFRobot Gravity and Elecfreaks Octopus NFC modules.",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "enums.d.ts",
+        "shims.d.ts",
+        "bluetooth.ts",
+        "bluetooth.cpp",
+        "BLEHF2Service.h",
+        "BLEHF2Service.cpp"
+    ],
+    "public": true,
+    "targetVersions": {
+        "target": "8.0.18",
+        "pxt": "12.0.16"
+    },
+    "weight": 10,
+    "searchOnly": true,
+    "icon": "https://cdn.makecode.com/blob/cb967d40a701253f74083780efd61892f268c81c/static/packages/bluetooth/icon.png",
+    "yotta": {
+        "config": {
+            "microbit-dal": {
+                "bluetooth": {
+                    "enabled": 1
+                }
+            }
+        },
+        "optionalConfig": {
+            "microbit-dal": {
+                "stack_size": 1280,
+                "gatt_table_size": "0x700"
+            }
+        },
+        "userConfigs": [
+            {
+                "description": "Disable Bluetooth Event Service",
+                "config": {
+                    "microbit-dal": {
+                        "bluetooth": {
+                            "event_service": 0
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}
